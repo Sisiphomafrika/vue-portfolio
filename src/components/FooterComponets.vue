@@ -1,39 +1,38 @@
 <template>
     <footer>
-        <div class="footer-content">
-            <p>&copy;Sisipho Mafrika's Portfolio.</p>
-            <div class="social-icons">
-                <a href="https://drive.google.com/file/d/1Zp8hQWSMvYFnNNZ9xz1lo_7a6cxKCIhQ/view?usp=drive_link" target="_blank">Instagram</a>
-                <a href="https://drive.google.com/file/d/1B5hERofjTLaadi6C4qkSLR0nVQrMC-T6/view?usp=drive_link" target="_blank">LinkedIn</a>
-                <a href="https://drive.google.com/file/d/1WI4Sf9Wn2x1cAnEdrqXFSJBBGRs-mSCt/view?usp=drive_link" target="_blank">WhatsApp</a>
-            </div>
-        </div>
+      <p>&copy; {{ currentYear }} Sisipho Mafrika's Portfolio. </p>
+     <div>
+        <a href="https://github.com/Sisiphomafrika" class="center"><img src="" alt="GitHub"></a>
+        <a href="" class="center"><img src="" alt="Email"></a>
+        <a href="" class="center"><img src="" alt="WhatsApp"></a>
+     </div>
     </footer>
-</template>
-
-<script>
-export default {
-    data() {
-    }
-}
-</script>
-
-<style scoped>
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
+  </template>
+  <style scoped>
+  footer {
+    
+    color: black;
     text-align: center;
-}
-
-.footer-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.social-icons a {
-    color: #fff;
-    text-decoration: none;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+  }
+  .social-icons a {
     margin: 0 10px;
-}
-<style/>
+  }
+  /* Add styling for the icon */
+  footer i {
+    color:white; /* Change the color as needed */
+    margin-left: 5px;
+  }
+  </style>
+  <script>
+  export default {
+    data() {
+      return {
+        currentYear: new Date().getFullYear(),
+      };
+    },
+  };
+  </script>

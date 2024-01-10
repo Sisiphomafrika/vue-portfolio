@@ -1,96 +1,76 @@
 <template>
-    <div class="contacts">
-      <section class="contact-section flex-1 d-flex align-content-center justify-center">
-                <h1 class="section-title">CONTACTS</h1>
-                <div class="form-container">
-                    <form action="https://formspree.io/f/mdorjkae" method="POST" class="contact-form">
-                        <div class="form-group">
-                            <label for="fname">First Name</label>
-                            <input type="text" id="fname" name="firstname" placeholder="Your name.." class="form-input" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="lname">Last Name</label>
-                            <input type="text" id="lname" name="lastname" placeholder="Your last name.." class="form-input" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="country">Country</label>
-                            <select id="country" name="country" class="form-input" required>
-                                <option value="australia">Australia</option>
-                                <option value="canada">Canada</option>
-                                <option value="usa">USA</option>
-                                <option value="lesotho">Lesotho</option>
-                                <option value="RSA">RSA</option>
-                                <option value="china">CHINA</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <textarea id="subject" name="subject" placeholder="Write something.." class="form-textarea" style="height:200px" required></textarea>
-                        </div>
-                        <button type="submit" class="form-button">Submit</button>
-                    </form>
-                </div>
-            </section>   
+    <div class="contact-container">
+      <h1>Contact</h1>
+      <div class="form-container">
+        <form action="https://formspree.io/f/{form_id}" method="post">
+          <h4>Get in Touch</h4>
+          <label for="name">Name</label>
+          <input name="name" id="name" type="text" required>
+          <label for="number">Contact Number</label>
+          <input name="number" id="number" type="tel" required>
+          <label for="email">Your Email</label>
+          <input name="email" id="email" type="email" required>
+          <label for="message">Message</label>
+          <textarea name="message" id="message" rows="4" required></textarea>
+          <button class="btn" type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   </template>
-   <style>
-   .contact-section {
-    
-    padding: 40px;
+  <script>
+  export default {};
+  </script>
+  <style scoped>
+  .contact-container {
     text-align: center;
-}
-
-.section-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
-    text-align: center;
-}
-
-.form-container {
+    margin-top: 50px;
+  }
+  h1 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+  }
+  h1::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+    bottom: 0;
+    left: 0;
+  }
+  .form-container {
     max-width: 400px;
     margin: 0 auto;
-}
-
-.form-group {
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.form-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #555;
-}
-
-.form-input,
-.form-textarea,
-.form-select {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
+    padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
-
-.form-button {
-    background-color: #4caf50;
-    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  label {
+    margin-top: 10px;
+  }
+  input,
+  textarea {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  button {
+    background-color: #84AF9B;
+    color: #fff;
+    padding: 10px;
     border: none;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 5px;
+    border-radius: 3px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.form-button:hover {
-    background-color: #45a049;
-}
-  </style>
-  
- 
+  }
+  </style>1
