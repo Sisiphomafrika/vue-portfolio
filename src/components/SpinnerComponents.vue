@@ -17,8 +17,8 @@
   height: 40px;
   animation: spin 1s linear infinite;
   position: absolute;
-  top: 50%;
-  left: 50%;
+ top: 30%;
+left: 25%;
   margin-top: -20px;
   margin-left: -20px;
 }
