@@ -1,34 +1,41 @@
 <template>
-  <div>
-    <h2>Testimonials</h2>
-    <div
-      class="card"
-      v-for="testimonial in $store.state.testimonialData"
-      :key="testimonial.name"
-      style="width: 18rem;" >
-      <img src="" class="card-img-top" alt="">
-      <div class="card-body">
-        <h5 class="card-title">{{ testimonial.name }}</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="container vh-150">
+       <h5 class="display-5">Testimonials</h5>
+      <div class="row mx-5">
+           <div class="card m-5 " id="" style="width: 18rem;" v-for="Testimonials in Testimonials " :key="Testimonials">
+     <div class="card-body">
+       <img class="card-images" :src=" Testimonials.profile" loading="lazy" alt="Profile picture" width="200" height="200">
+       <h3 class="card-title mt-2">{{Testimonials.name}}</h3>
+       <h4 class="card-subtitle">{{ Testimonials.surname }}</h4>
+       <span class="card-text">{{Testimonials.quotes}}</span>
+     </div>
+   </div>
       </div>
-    </div>
-  </div>
+   </div>
 </template>
- <script>
- export default {
-   computed: {
-     fetchDataTestimonial() {
-       this.$store.dispatch('fetchData');
-     },
-   },
-   mounted() {
-     this.fetchDataTestimonial;
-   },
- };
- </script>
-  <style>
+<script>
+export default {
+    computed:{
+        Testimonial(){
+            return this.$store.state.Testimonials;
+        }
+    },
+    mounted(){
+        this.$store.dispatch("fetchTestimonials")
+    }
+}
+</script>
+<style >
+body{
+    background-color: #6A9AC4;
+}
+.card{
+    background-color: #021627;
+    color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-left: 16px;
+  /* Add any other styling as needed */
+}
 </style>
