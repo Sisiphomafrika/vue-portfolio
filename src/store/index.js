@@ -1,30 +1,72 @@
-import { createStore } from 'vuex';
-import axios from 'axios';
+import { createStore } from 'vuex'
+const dataUrl = 'https://sisiphomafrika.github.io/EMOPportfolioData/data/'
 export default createStore({
   state: {
-    ResumeData: [],
-    ProjectData: [],
-    testimonialData: [],
+    jobTitle: null,
+    about: null,
+    education: null,
+    skills: null,
+    testimonials: null,
+    projects: null
   },
   getters: {
   },
   mutations: {
-    testimonialData(state, data) {
-      state.testimonialData = data;
-    },
+  setEducation(state, value) {
+    // console.log(value);
+    state.education = value
   },
-  actions: {
-    fetchData({ commit }) {
-      axios.get('http://localhost:3030/data') 
-        .then(response => {
-          console.log(response);
-          commit('testimonialData', response.data[2]);
-        })
-        .catch(error => {
-          console.error('Error fetching data:', error);
-        });
-    },
+  setSkills(state, value) {
+    state.skills = value
   },
-  modules: {
+  setTestimonials(state, value) {
+    state.testimonials = value
   },
-});
+  setProjects(state, value) {
+    state.projects = value
+  }
+  },
+actions: {
+  async fetchEducation(context) {
+    let res = await fetch(dataUrl)
+    let Education = await res.json()
+    console.log(Education.education);
+    context.commit('setEducation', Education.education);
+  },
+  catch (error) {
+    console.log(`Error: ${error}`);
+  },
+  async fetchTestimonials(context) {
+    let res = await fetch(dataUrl)
+    let testimonials = await res.json()
+    console.log(testimonials);
+    context.commit('setTestimonials',testimonials);
+  },
+  atch
+   (error) {
+    console.log(`Error: ${error}`);
+  },
+  async fetchProjects(context) {
+    let res = await fetch(dataUrl)
+    let {projects} = await res.json()
+    console.log(projects);
+    context.commit('setProjects', projects);
+  },
+  catche (error) {
+    console.log(`Error: ${error}`);
+  },
+  async fetchSkills(context) {
+    let res = await fetch(dataUrl)
+    let {skills} = await res.json()
+    context.commit('setSkills', skills);
+  },
+  catchh (error) {
+    console.log(`Error: ${error}`);
+  }
+}
+})
+
+
+
+
+

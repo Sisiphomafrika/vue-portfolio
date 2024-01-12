@@ -14,19 +14,19 @@
             <router-link class="nav-link" to="/" exact>Home</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/About">About</router-link>
+            <router-link class="nav-link" to="/about">About</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/Educational">Educational</router-link>
+            <router-link class="nav-link" to="/projects">Project</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/Resume">Resume</router-link>
+            <router-link class="nav-link" to="/testimonials">Testimonials</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/Testimonial">Testimonials</router-link>
+            <router-link class="nav-link" to="/resume">Resume</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/Contacts">Contacts</router-link>
+            <router-link class="nav-link" to="/contacts">Contacts</router-link>
           </li>
         </ul>
       </div>
